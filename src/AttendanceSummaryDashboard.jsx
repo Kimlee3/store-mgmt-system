@@ -6,13 +6,6 @@ import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 const COLORS = ['#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 
 const AttendanceSummaryDashboard = () => {
-  const [summary, setSummary] = useState({
-    present: 0,
-    absent: 0,
-    late: 0,
-    earlyLeave: 0,
-  });
-
   const [chartData, setChartData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -45,7 +38,6 @@ const AttendanceSummaryDashboard = () => {
           }
         });
 
-        setSummary({ present, absent, late, earlyLeave });
         setChartData([
           { name: '출근', value: present },
           { name: '결근', value: absent },
